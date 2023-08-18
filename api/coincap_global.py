@@ -14,3 +14,4 @@ request = requests.get(GLOBAL_URL, headers=headers)
 results = request.json()
 
 print(json.dumps(results, sort_keys=True, indent=4))
+
