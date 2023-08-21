@@ -46,4 +46,4 @@ for currency in data :
     print("24hr Change : " + string_percent_change_24hr)
     print("7 Day Change : " + string_percent_change_7day)
     print("3 Day Change : " + string_percent_change_30day)
-    print("Market Cap : " + string_market_cap)
+    print("Market Cap : " + string_market_cap + "\n")
