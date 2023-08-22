@@ -12,6 +12,7 @@ headers = {"X-CMC_PRO_API_KEY": API_KEY}
 
 BASE_URL = 'https://pro-api.coinmarketcap.com'
 
+# Menu for Ranking Function
 print()
 print("CoinMarketCap Explorer Menu")
 print()
@@ -36,9 +37,63 @@ else:
     print("Invalid choice")
     exit(1)
 
+
 quote_url = BASE_URL + "/v1/cryptocurrency/listings/latest?convert=" + local_currency + "&sort=" + sort
 
 request = requests.get(quote_url, headers=headers)
 results = request.json()
 
-print(json.dumps(results, sort_keys=True, indent=4))
+# Api Data
+data = results["data"]
+
+#Table Varible
+table = PrettyTable(["Asset", "Price", "Market_Cap", "Volume", "1hr", "24hr" ,"7d", "30d"])
+
+print()
+
+for currency in data:
+    name = currency["name"]
+    symbol = currency["symbol"]
+    # Data for Table
+    quote = currency["quote"][local_currency]
+    market_cap = quote["market_cap"]
+
+    percent_change_1hr = quote["percent_change_1h"]
+    percent_change_24hr = quote["percent_change_24h"]
+    percent_change_7d = quote["percent_change_7d"]
+    percent_change_30d = quote["percent_change_30d"]
+
+    price = quote["price"]
+    volume = quote["volume_24h"]
+    # Formatting data    
+    if percent_change_1hr is not None:
+        percent_change_1hr = round(percent_change_1hr, 2)
+        
+    if percent_change_24hr is not None:
+        percent_change_24hr = round(percent_change_24hr, 2)
+
+    if percent_change_7d is not None:
+        percent_change_7d = round(percent_change_7d, 2)
+
+    if percent_change_30d is not None:
+        percent_change_30d = round(percent_change_30d, 2)            
+
+    if volume is not None:
+        volume_string = "{:,}".format(round(price, 2))
+
+    if market_cap is not None:
+        market_cap_string = "{:,}".format(round(price, 2))
+
+    price_string = "{:,}".format(round(price, 2)) 
+
+    table.add_row([name + " (" + symbol + ')',
+                   local_symbol + price_string,
+                   local_symbol + market_cap_string,
+                   local_symbol + volume_string,
+                   str(percent_change_1hr),
+                   str(percent_change_24hr),
+                   str(percent_change_7d),
+                   str(percent_change_30d),]) 
+print()
+print(table)
+print()           
