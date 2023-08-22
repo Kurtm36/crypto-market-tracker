@@ -55,7 +55,7 @@ def global_market_data(local_currency, local_symbol):
     print("Ethereum makes up " + str(eth_dominance) + "%" + " of the global market cap")
 execute_global_data = True
 
-# Global Listings Of Cryptos Function
+# Global Listings Of Cryptocurrencies Function
 def coincap_coin_listings(local_currency, local_symbol):
     BASE_URL = 'https://pro-api.coinmarketcap.com'
     GLOBAL_URL = BASE_URL + '/v1/cryptocurrency/listings/latest?convert=' + local_currency
@@ -96,7 +96,7 @@ def coincap_coin_listings(local_currency, local_symbol):
         print("Market Cap : " + string_market_cap + "\n")
 execute_coincap_listings = True
 
-# Cypto Quotes (Enter ticker symbol (CAPS ONLY))
+# Cypto Quotes Function(Enter ticker symbol (CAPS ONLY))
 def coincap_quotes():
 
     BASE_URL = 'https://pro-api.coinmarketcap.com'
@@ -150,12 +150,12 @@ def clear_text_terminal():
 # Terminal Menu
 def display_Menu():
     print("Kurts Cypto Data Center")
-    print("Select 1 for Global Market Data")
-    print("Select 2 for Coin Listings Data ")
-    print("Select 3 for Coin Quotes ")
-    print("Select 4 for Global Market Data")
-    print("Select 5 for Global Market Data")
-    print("Select 0 to Exit")
+    print("Select [1] for Global Market Data")
+    print("Select [2] for Coin Listings Data ")
+    print("Select [3] for Coin Quotes ")
+    print("Select [4] for Global Market Data")
+    print("Select [5] for Global Market Data")
+    print("Select [0] to Exit")
 
 # Menu while loop
 while True:
@@ -177,7 +177,7 @@ while True:
         execute_coincap_listings = False  
         input("Press [Enter] to return to Menu")
         execute_coincap_listings = True
-    elif user_input == 3:
+    elif user_input == 3 and execute_coincap_quotes:
         clear_text_terminal()   
         coincap_quotes()
         execute_coincap_quotes = False
