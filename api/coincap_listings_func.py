@@ -36,9 +36,9 @@ for currency in data :
     market_cap = round(market_cap, 2)
     #Formatting data
     string_price = local_symbol + "{:,}".format(price)
-    string_percent_change_24hr = local_currency + "{:,}".format(percent_change_24hr)
-    string_percent_change_7day = local_currency + "{:,}".format(percent_change_7day)
-    string_percent_change_30day = local_currency + "{:,}".format(percent_change_30day)
+    string_percent_change_24hr = "{:,}%".format(percent_change_24hr)
+    string_percent_change_7day = "{:,}%".format(percent_change_7day)
+    string_percent_change_30day = "{:,}%".format(percent_change_30day)
     string_market_cap = local_currency + "{:,}".format(market_cap)
     #Printing the data
     print(name + " (" + symbol +")")

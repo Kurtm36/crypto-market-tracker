@@ -21,7 +21,7 @@ print("[1]- Top 100 Sorted By Market cap")
 print("[2]- Top 100 Sorted By 24hr Trading Volume ")
 print("[3]- Top 100 Sorted By 24hr Percent Change")
 print("[4]- Top 100 Sorted By 7 day Change")
-print("[5]- Top 100 Sorted By 30 day Change")
+print()
 print("[0]- Exit")
 
 choice = input("What information would you like to view? (1-3 or 0 to exit) :  ")
@@ -32,10 +32,11 @@ elif choice == "2":
     sort = "volume_24h"
 elif choice == "3":
     sort = "percent_change_24h"
-elif choice == "0":
-    exit(0)
+elif choice == "4":
+    sort = "percent_change_7d"   
 else:
     print("Invalid choice. Please select a valid option.")
+    input("Press [Enter] to return to Main-Menu")
 
 
 quote_url = BASE_URL + "/v1/cryptocurrency/listings/latest?convert=" + local_currency + "&sort=" + sort
