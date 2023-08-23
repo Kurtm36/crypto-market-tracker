@@ -259,7 +259,7 @@ def coincap_ranker():
     print()
     print(table)
     print()           
-excecute_coincap_ranker = True
+execute_coincap_ranker = True
 
 # Clear text for function for terminal 
 def clear_text_terminal():
@@ -285,7 +285,6 @@ while True:
     keyboardValue = input()
     user_input = int(keyboardValue)
         
-        
     if user_input == 1 and execute_global_data: #Global Data
         clear_text_terminal()   
         global_market_data(local_currency, local_symbol)  
@@ -304,12 +303,12 @@ while True:
         execute_coincap_quotes = False
         input("Press [Enter] to return to Menu")
         execute_coincap_quotes = True
-    elif user_input == 4 and excecute_coincap_ranker: # Crypto Ranker
+    elif user_input == 4 and execute_coincap_ranker: # Crypto Ranker
         clear_text_terminal() 
         coincap_ranker()  
-        excecute_coincap_ranker = False
+        execute_coincap_ranker = False
         input("Press [Enter] to return to Menu")
-        excecute_coincap_ranker = True
+        execute_coincap_ranker = True
     elif user_input == 5:
         clear_text_terminal()   
         print("You have selected [5]")
