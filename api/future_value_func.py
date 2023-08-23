@@ -27,3 +27,26 @@ string_total_market_cap = "{:,}".format(total_market_cap)
 
 # Headers for table found @ https://www.visualcapitalist.com/all-of-the-worlds-money-and-markets-in-one-visualization-2022/
 table = PrettyTable(["Name", "Ticker", "% of total global cap", "Current", "11.5T (Gold)", "49.T(Narrow Money)", "95.5T(Stock Markets)"])
+
+listing_url = BASE_URL + "/v1/cryptocurrency/listings/latest?convert-" + local_currency
+
+request = requests.get(listing_url, headers=headers)
+results = request.json()
+
+data = results["data"]
+
+for currency in data :
+    name = currency["name"]
+    ticker = currency["symbol"]
+    available_supply = currency["total_supply"]
+
+    price = currency['quote'][local_currency]["price"]
+    market_cap = currency['quote'][local_currency]["market_cap"]
+
+    percentage_of_global_cap = float(market_cap) / total_market_cap
+    
+    # Calculation for future prices
+    gold_price = 11500000000000 * percentage_of_global_cap / available_supply
+    narrow_money_price = 49900000000000 * percentage_of_global_cap / available_supply
+    stock_market_price = 95500000000000 * percentage_of_global_cap / available_supply
+    
