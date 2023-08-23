@@ -20,5 +20,5 @@ GLOBAL_URL = BASE_URL + '/v1/global-metrics/quotes/latest?convert=' + local_curr
 request = requests.get(GLOBAL_URL, headers=headers)
 results = request.json()
 
-# print(json.dumps(results, sort_keys=True, indent=4))
+print(json.dumps(results, sort_keys=True, indent=4))
 data = results["data"]
