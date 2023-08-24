@@ -1,5 +1,6 @@
 import math
 import json
+import env
 import locale
 import requests
 from prettytable import PrettyTable

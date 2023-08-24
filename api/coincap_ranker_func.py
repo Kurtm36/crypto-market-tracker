@@ -1,5 +1,6 @@
 import json
 import requests
+import env
 from datetime import datetime
 from prettytable import PrettyTable
 from colorama import Fore, Back, Style

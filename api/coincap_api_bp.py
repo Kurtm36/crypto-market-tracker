@@ -4,6 +4,7 @@ Back up api boiler plate
 import os 
 import requests    
 import json
+import env
 
 local_currency = 'EUR'
 local_symbol = '€'

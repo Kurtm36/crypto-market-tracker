@@ -1,6 +1,8 @@
 import requests    
 import json
 import os 
+import env
+
 local_currency = 'EUR'
 local_symbol = '€'
 
