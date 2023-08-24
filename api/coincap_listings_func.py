@@ -7,7 +7,7 @@ local_symbol = '€'
 """
 API Key varible. Generated @ https://pro.coinmarketcap.com/account . Login Creds will be in README if required.
 """
-API_KEY = "ae55d981-0a3f-4fab-82d8-bfd27701bda3"
+API_KEY = os.environ.get("API_KEY")
 headers = {"X-CMC_PRO_API_KEY": API_KEY}
 
 BASE_URL = 'https://pro-api.coinmarketcap.com'
