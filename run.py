@@ -27,7 +27,7 @@ def global_market_data(local_currency, local_symbol):
     request = requests.get(GLOBAL_URL, headers=headers)
     results = request.json()
 
-    print(json.dumps(results, sort_keys=True, indent=4))
+    #print(json.dumps(results, sort_keys=True, indent=4))
     data = results["data"]
 
     """
@@ -197,7 +197,7 @@ def coincap_ranker():
     data = results["data"]
 
     #Table Varible
-    table = PrettyTable(["Asset", "Price",  "Volume", "1hr", "24hr" ,"7d", "30d"])
+    table = PrettyTable(["Asset", "Price",  "1hr", "24hr" ,"7d", "30d"])
 
     print()
 
@@ -256,7 +256,6 @@ def coincap_ranker():
         # Table formatting 
         table.add_row([name + " (" + symbol + ')',
                     local_symbol + price_string,
-                    local_symbol + volume_string,
                     str(percent_change_1hr),
                     str(percent_change_24hr),
                     str(percent_change_7d),
