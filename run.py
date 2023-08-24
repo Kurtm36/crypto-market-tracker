@@ -14,7 +14,7 @@ API_KEY = os.environ.get("API_KEY")
 headers = {"X-CMC_PRO_API_KEY": API_KEY}
 
 BASE_URL = 'https://pro-api.coinmarketcap.com'
-
+GLOBAL_URL = BASE_URL + '/v1/global-metrics/quotes/latest?convert=' + local_currency
 # Global Market data Function
 def global_market_data(local_currency, local_symbol):
     
