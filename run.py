@@ -5,7 +5,7 @@ import locale
 from datetime import datetime
 from prettytable import PrettyTable
 from colorama import Fore, Back, Style
-import env
+
 
 local_currency = 'EUR'
 local_symbol = '€'
