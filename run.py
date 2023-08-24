@@ -14,9 +14,10 @@ API_KEY = os.environ.get("API_KEY")
 headers = {"X-CMC_PRO_API_KEY": API_KEY}
 
 BASE_URL = 'https://pro-api.coinmarketcap.com'
-GLOBAL_URL = BASE_URL + '/v1/global-metrics/quotes/latest?convert=' + local_currency
+
+
 # Global Market data Function
-def global_market_data(local_currency, local_symbol):
+def global_market_data():
     
     local_currency = 'EUR'
     local_symbol = '€'
@@ -66,7 +67,7 @@ def global_market_data(local_currency, local_symbol):
 execute_global_data = True
 
 # Global Listings Of Cryptocurrencies Function
-def coincap_coin_listings(local_currency, local_symbol):
+def coincap_coin_listings():
     BASE_URL = 'https://pro-api.coinmarketcap.com'
     GLOBAL_URL = BASE_URL + '/v1/cryptocurrency/listings/latest?convert=' + local_currency
 
@@ -350,13 +351,13 @@ while True:
         
     if user_input == 1 and execute_global_data: #Global Data
         clear_text_terminal()   
-        global_market_data(local_currency, local_symbol)  
+        global_market_data()  
         execute_global_data = False
         input("Press [Enter] to return to Menu")
         execute_global_data = True
     elif user_input == 2 and execute_coincap_listings: #Listings Data
         clear_text_terminal()
-        coincap_coin_listings(local_currency, local_symbol) 
+        coincap_coin_listings() 
         execute_coincap_listings = False  
         input("Press [Enter] to return to Menu")
         execute_coincap_listings = True
