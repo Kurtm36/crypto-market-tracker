@@ -193,7 +193,7 @@ def coincap_ranker():
     data = results["data"]
 
     #Table Varible
-    table = PrettyTable(["Asset", "Price", "Market_Cap", "Volume", "1hr", "24hr" ,"7d", "30d"])
+    table = PrettyTable(["Asset", "Price",  "Volume", "1hr", "24hr" ,"7d", "30d"])
 
     print()
 
