@@ -27,7 +27,7 @@ def global_market_data(local_currency, local_symbol):
     request = requests.get(GLOBAL_URL, headers=headers)
     results = request.json()
 
-    #print(json.dumps(results, sort_keys=True, indent=4))
+    print(json.dumps(results, sort_keys=True, indent=4))
     data = results["data"]
 
     """
