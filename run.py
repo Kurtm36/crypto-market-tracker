@@ -252,12 +252,11 @@ def coincap_ranker():
         # Table formatting 
         table.add_row([name + " (" + symbol + ')',
                     local_symbol + price_string,
-                    local_symbol + market_cap_string,
                     local_symbol + volume_string,
                     str(percent_change_1hr),
                     str(percent_change_24hr),
                     str(percent_change_7d),
-                    str(percent_change_30d),]) 
+                    str(percent_change_30d)]) 
 
     print()
     print(table)
