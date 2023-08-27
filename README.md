@@ -41,6 +41,11 @@ This function provoids hypothetical future values of cryptocurrencies based on d
 ![Coincap Quotes](/images/future-value.png)
 
 
+### Future features 
+- In the future I would like to add a trading algorithm
+- I would also like to add wallet function
+- I would also like to export the data to ether Google Sheets or Win Excel.
+  
 ## Requirements
 - Python 3.x (I used Python 3.11)
 - A valid CoinMarketCap API key , You can use the current API key but if you'd like you can download a free API key @ [CoinMarket Cap API](https://coinmarketcap.com/api/)
