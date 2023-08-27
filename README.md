@@ -9,6 +9,7 @@ The Crypto Market Data App is a Python application that provides real-time infor
 - Top 100 Performing Cryptocurrencies: Display a ranked list of top 100 cryptocurrencies based on different metrics.
 - Future Value Predictor: Hypothetical future values of cryptocurrencies based on different market cap scenarios.
 
+![]()
 #### Global Market Data
 
 #### Coin Listings
