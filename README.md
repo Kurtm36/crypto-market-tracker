@@ -40,12 +40,20 @@ This function provoids hypothetical future values of cryptocurrencies based on d
 
 ![Coincap Quotes](/images/future-value.png)
 
+### Example Usage
+- To view global market data, choose option 1.
+- To get data for specific coins, select option 2.
+- For coin quotes, choose option 3.
+- To see the top 100 performing cryptocurrencies, select option 4.
+- For future value predictions, choose option 5.
 
 ### Future features 
 - In the future I would like to add a trading algorithm
 - I would also like to add wallet function
 - I would also like to export the data to ether Google Sheets or Win Excel.
-  
+
+---
+
 ## Requirements
 - Python 3.x (I used Python 3.11)
 - A valid CoinMarketCap API key , You can use the current API key but if you'd like you can download a free API key @ [CoinMarket Cap API](https://coinmarketcap.com/api/)
@@ -86,10 +94,23 @@ Follow these steps to set up and run my Crypto Market Data App on your local mac
 2. The terminal will display the main menu. Choose an option by entering the corresponding number and pressing Enter.  
 
 3. Follow the on-screen prompts to explore different features of the app.
+--- 
 
-### Example Usage
-- To view global market data, choose option 1.
-- To get data for specific coins, select option 2.
-- For coin quotes, choose option 3.
-- To see the top 100 performing cryptocurrencies, select option 4.
-- For future value predictions, choose option 5.
+### Testing 
+
+### Bugs
+- In coincap_ranker_func.py Price is matching market_cap (solved. If statements LN.97 & LN.100 had swaped varibles 
+i.e market_cap in volume and volume in market_cap)
+
+- In coincap_listing/quotes_func.py percent changes were appearing as EURO and not percent (solved. Corrected formatting on string_percent etc)
+
+- In future_value_func.py - I had to use encoding = 'utf-8-sig' to solve a issue with api not iterateing through the data
+
+- In future_value_func.py - I was using a "total_supply" instead of "circulating supply" for avaible_supply 
+
+### Credits 
+- This video helped me get set up with CoinmarketCap API [Beginner's Guide to the CoinMarketCap API](https://www.youtube.com/watch?v=f3GfkvfpVAE)
+
+- Love sandwiches by Codeinstitute helped me understand how API's work.
+
+- My mentor Aleksei Konovalovksi for his advice and guidance.
