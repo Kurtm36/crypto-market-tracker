@@ -1,32 +1,52 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Kurts Crypto Market Data App
 
-Welcome,
+The Crypto Market Data App is a Python application that provides real-time information provoided by coinmarket-cap API about various cryptocurrencies and their market performance. It fetches data from the CoinMarketCap API and displays it in a user-friendly format in the terminal.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Features
+- Global Market Data: Get an overview of the global cryptocurrency market.
+- Coin Listings Data: Display the latest data for all listed cryptocurrencies.
+- Coin Quotes: Get the latest data for a specific cryptocurrency by its ticker symbol.
+- Top 100 Performing Cryptocurrencies: Display a ranked list of top 100 cryptocurrencies based on different metrics.
+- Future Value Predictor: Hypothetical future values of cryptocurrencies based on different market cap scenarios.
 
-## Reminders
+## Requirements
+- Python 3.x (I used Python 3.11)
+- A valid CoinMarketCap API key , You can use the current API key but if you'd like you can download a free API key @ [CoinMarket Cap API](https://coinmarketcap.com/api/)
+- Required Python libraries:
+    - requests
+    - json
+    - os
+    - locale
+    - Datetime
+    - Prettytable
+    - Colorama
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## Getting Started 
+Follow these steps to set up and run my Crypto Market Data App on your local machine .
 
-## Creating the Heroku app
+1. Clone the repository to your local machine   
+``` git clone https://github.com/Kurtm36/crypto-market-tracker.git```
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+2.  Navigate to the project directory
+   
+    ```cd crypto-market-tracker```
 
-1. `heroku/python`
-2. `heroku/nodejs`
+3. Install the required Python libraries using pip
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+    ```pip install -r requirements.txt```
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Running the App
+1. Execute the run.py file
 
-Connect your GitHub repository and deploy as normal.
+    ```python3 run.py ```
 
-## Constraints
+2. The terminal will display the main menu. Choose an option by entering the corresponding number and pressing Enter.  
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+3. Follow the on-screen prompts to explore different features of the app.
 
----
-
-Happy coding!
+### Example Usage
+- To view global market data, choose option 1.
+- To get data for specific coins, select option 2.
+- For coin quotes, choose option 3.
+- To see the top 100 performing cryptocurrencies, select option 4.
+- For future value predictions, choose option 5.
