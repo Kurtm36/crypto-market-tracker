@@ -9,16 +9,36 @@ The Crypto Market Data App is a Python application that provides real-time infor
 - Top 100 Performing Cryptocurrencies: Display a ranked list of top 100 cryptocurrencies based on different metrics.
 - Future Value Predictor: Hypothetical future values of cryptocurrencies based on different market cap scenarios.
 
-![]()
+![Main Menu](/images/main-menu.png)
+
+--- 
+
 #### Global Market Data
+This function provides insights into the overall state of the cryptocurrency market, including the total market capitalization, trading volume, Bitcoin dominance, and Ethereum dominance.
+
+![Global Market Data](/images/global-market-data.png)
 
 #### Coin Listings
+This function provides essential information about various cryptocurrencies, including their names, symbols, prices, 24-hour changes, 7-day changes, 30-day changes, and market capitalizations.
+
+![Global Market Data](/images/coincap-listings.png)
 
 #### Coin Quotes 
+This function provides detailed information about the requested cryptocurrency, including its name, symbol, price, 24-hour change, 7-day change, 30-day change, and market capitalization.
+
+![Coincap Quotes](/images/coincap-quotes.png)
+![Coincap Quotes Return](/images/coincap-quotes-results.png)
 
 #### Top 100 Performing Cryptocurrencys
+This function fetches and interactively displays real-time ranking data for cryptocurrencies using the API. This function provides a comprehensive overview of the top 100 cryptocurrencies with color indictiors which are ranked based on various criteria, including market cap, 24-hour trading volume, 24-hour percent change, and 7-day change.
+
+![Coincap Quotes](/images/top-100-menu.png)
+![Coincap Quotes](/images/top-100-table.png)
 
 #### Future Value Predictor
+This function provoids hypothetical future values of cryptocurrencies based on different market cap scenarios such as Gold Market cap and the stock exchange market cap. THIS IS NOT FINANCIAL ADVICE !.
+
+![Coincap Quotes](/images/future-value.png)
 
 
 ## Requirements
