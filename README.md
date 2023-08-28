@@ -111,6 +111,7 @@ This project was deployed using Code institutes mock terminal for heroku
 ![Coincap Quotes](/images/python-linter.png)
 
 - I tested different inputs and invalid inputs to see If I could break my program.
+- I tested the App on command prompt aswell as other terminals 
 
 ### Bugs
 - In coincap_ranker_func.py Price is matching market_cap (solved. If statements LN.97 & LN.100 had swaped varibles 

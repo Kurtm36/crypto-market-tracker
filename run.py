@@ -430,7 +430,7 @@ def clear_text_terminal():
 
 
 def display_Menu():
-    print("Kurts Cypto Data Center")
+    print("Kurts Crypto Data Center")
     print()
     print("Select [1] for Global Market Data")
     print("Select [2] for Coin Listings Data ")
