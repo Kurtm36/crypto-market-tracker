@@ -254,7 +254,7 @@ def coincap_ranker():
         data = results["data"]
 
         # Table Varible
-        table = PrettyTable(["Asset", "Price",  "1hr", "24hr", "7d", "30d"])
+        table = PrettyTable(["Asset", "Price",  "1hr", "24hr", "7d"])
 
         print()
 
@@ -268,7 +268,7 @@ def coincap_ranker():
             percent_change_1hr = quote["percent_change_1h"]
             percent_change_24hr = quote["percent_change_24h"]
             percent_change_7d = quote["percent_change_7d"]
-            percent_change_30d = quote["percent_change_30d"]
+            
 
             price = quote["price"]
             volume = quote["volume_24h"]
@@ -301,14 +301,6 @@ def coincap_ranker():
                     percent_change_7d = Back.RED + str(
                         percent_change_7d) + "%" + Style.RESET_ALL
 
-            if percent_change_30d is not None:
-                percent_change_30d = round(percent_change_30d, 2)
-                if percent_change_30d > 0:
-                    percent_change_30d = Back.GREEN + str(
-                        percent_change_30d) + "%" + Style.RESET_ALL
-                else:
-                    percent_change_30d = Back.RED + str(
-                        percent_change_30d) + "%" + Style.RESET_ALL
 
             if volume is not None:
                 volume_string = "{:,}".format(round(volume, 2))
