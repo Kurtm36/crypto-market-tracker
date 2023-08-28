@@ -218,14 +218,12 @@ def coincap_ranker():
     print()
     print("[1]- Top 100 Sorted By Market cap")
     print("[2]- Top 100 Sorted By 24hr Trading Volume ")
-    print("[3]- Top 100 Sorted By 24hr Percent Change")
-    print("[4]- Top 100 Sorted By 7 day Change")
+    print("[3]- Top 100 Sorted By 7 day Change")
     print()
     print("[0]- Exit")
 
-    choice = input(
-        "What information would you like to view? (1-3 or 0 to exit) :  ")
-        
+    choice = input("What information would you like to view? (1-3 or 0 to exit): ")
+
     if choice == "1":
         sort = "market_cap"
     elif choice == "2":
@@ -234,8 +232,7 @@ def coincap_ranker():
         sort = "percent_change_7d"
     else:
         print("Invalid choice. Please select a valid option.")
-        coincap_ranker()
-        # input("Press [Enter] to return to Main-Menu")
+        return  # Exit the function if the choice is invalid
 
     quote_url = (
         BASE_URL +
@@ -465,7 +462,6 @@ while True:
     elif user_input == 4 and execute_coincap_ranker:  # Crypto Ranker
         clear_text_terminal()
         coincap_ranker()
-        execute_coincap_ranker = False
         input("Press [Enter] to return to Menu")
         execute_coincap_ranker = True
     elif user_input == 5:  # Future Value Predictor
