@@ -94,9 +94,23 @@ Follow these steps to set up and run my Crypto Market Data App on your local mac
 2. The terminal will display the main menu. Choose an option by entering the corresponding number and pressing Enter.  
 
 3. Follow the on-screen prompts to explore different features of the app.
---- 
+
+
+## Deployment 
+This project was deployed using Code institutes mock terminal for heroku 
+- Steps for deployment 
+  - Fork or clone this repository
+  - Create a new Heroku app
+  - Set the buildbacks for Python and NodesJS in that order 
+  - Link the Heroku app to the repository
+  - Click on deploy 
 
 ### Testing 
+- I ran my program through the CI Python linter and recieved the  all clear with no errors found  
+
+![Coincap Quotes](/images/python-linter.png)
+
+- I tested different inputs and invalid inputs to see If I could break my program.
 
 ### Bugs
 - In coincap_ranker_func.py Price is matching market_cap (solved. If statements LN.97 & LN.100 had swaped varibles 
