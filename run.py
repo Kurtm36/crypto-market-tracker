@@ -15,17 +15,15 @@ headers = {"X-CMC_PRO_API_KEY": API_KEY}
 BASE_URL = 'https://pro-api.coinmarketcap.com'
 
 # Global Market data Function
-
-
 def global_market_data(local_currency, local_symbol):
     """
-    Docstring goes here
+    This function sorts all the basic global data 
     """
 
     local_currency = 'EUR'
     local_symbol = '€'
 
-    # BASE_URL = 'https://pro-api.coinmarketcap.com'
+    
     GLOBAL_URL = (
         BASE_URL +
         '/v1/global-metrics/quotes/latest?convert=' +
@@ -35,7 +33,7 @@ def global_market_data(local_currency, local_symbol):
         request = requests.get(GLOBAL_URL, headers=headers, timeout=15)
         results = request.json()
 
-        # print(json.dumps(results, sort_keys=True, indent=4))
+        
         data = results["data"]
 
         # Total Market Cap
@@ -78,14 +76,12 @@ def global_market_data(local_currency, local_symbol):
     except KeyError as key_ex:
         print("Error, please try again")
 
-
-execute_global_data = True
-
 # Global Listings Of Cryptocurrencies Function
-
-
 def coincap_coin_listings(local_currency, local_symbol):
-    # BASE_URL = 'https://pro-api.coinmarketcap.com'
+    '''
+    This function gets all of the coin listings data
+    '''
+    
     GLOBAL_URL = (
         BASE_URL +
         '/v1/cryptocurrency/listings/latest?convert=' +
@@ -95,7 +91,7 @@ def coincap_coin_listings(local_currency, local_symbol):
         request = requests.get(GLOBAL_URL, headers=headers, timeout=15)
         results = request.json()
 
-        # print(json.dumps(results, sort_keys=True, indent=4))
+        
         data = results["data"]
 
         for currency in data:
@@ -132,15 +128,11 @@ def coincap_coin_listings(local_currency, local_symbol):
     except KeyError as key_ex:
         print("Error, please try again")
 
-
-execute_coincap_listings = True
-
 # Cypto Price Quotes Function(Enter ticker symbol (CAPS ONLY))
-
-
 def coincap_quotes():
-
-    # BASE_URL = 'https://pro-api.coinmarketcap.com'
+    '''
+    This function is for getting price quotes on coins
+    '''
 
     symbol = input(
         "Enter the ticker symbol of the cryptocurrency" +
@@ -198,18 +190,14 @@ def coincap_quotes():
         print("Error, please try again")
         coincap_quotes()
 
-
-execute_coincap_quotes = True
-
 # Top 100 Crypto Performance Ranker
-
-
 def coincap_ranker():
+    """
+    This function is for sorting and ranking coins based on different varibles
+    """
 
     local_currency = 'EUR'
     local_symbol = '€'
-
-    # BASE_URL = 'https://pro-api.coinmarketcap.com'
 
     # Menu for Ranking Function
 
@@ -320,16 +308,13 @@ def coincap_ranker():
         print("Error, please try again")
         coincap_ranker()
 
-
-execute_coincap_ranker = True
-
 # Future Value Predictor (Calculation : Gold,
 # Or Stock market_cap * percentage_of_global_cap / available_supply )
-
-
 def future_value():
+    '''
+    This function is for price prediction on coins based on different market caps 
+    '''
 
-    # BASE_URL = 'https://pro-api.coinmarketcap.com'
     GLOBAL_URL = (
         BASE_URL +
         '/v1/global-metrics/quotes/latest?convert=' +
@@ -339,7 +324,6 @@ def future_value():
         request = requests.get(GLOBAL_URL, headers=headers, timeout=15)
         results = request.json()
 
-        # print(json.dumps(results, sort_keys=True, indent=4))
         data = results["data"]
 
         encoding = 'utf-8-sig'
@@ -404,18 +388,11 @@ def future_value():
         print("Error, please try again")
         future_value()
 
-
-execute_future_value = True
-
 # Clear text for function for terminal
-
-
 def clear_text_terminal():
     os.system("cls" if os.name == "nt" else "clear")
 
 # Terminal Menu
-
-
 def display_Menu():
     print("Kurts Crypto Data Center")
     print()
@@ -426,7 +403,6 @@ def display_Menu():
     print("Select [5] for Future Value Predictor")
     print()
     print("Select [0] to Exit")
-
 
 # Menu while loop
 while True:
@@ -441,35 +417,26 @@ while True:
         except ValueError as exc:
             print(f"Invalid input: {exc}")
 
-    if user_input == 1 and execute_global_data:  # Global Data
+    if user_input == 1 :  # Global Data
         clear_text_terminal()
         global_market_data(local_currency, local_symbol)
-        execute_global_data = False
         input("Press [Enter] to return to Menu")
-        execute_global_data = True
-    elif user_input == 2 and execute_coincap_listings:  # Listings Data
+    elif user_input == 2 :  # Listings Data
         clear_text_terminal()
         coincap_coin_listings(local_currency, local_symbol)
-        execute_coincap_listings = False
         input("Press [Enter] to return to Menu")
-        execute_coincap_listings = True
-    elif user_input == 3 and execute_coincap_quotes:  # Quotes Data
+    elif user_input == 3 :  # Quotes Data
         clear_text_terminal()
         coincap_quotes()
-        execute_coincap_quotes = False
         input("Press [Enter] to return to Menu")
-        execute_coincap_quotes = True
-    elif user_input == 4 and execute_coincap_ranker:  # Crypto Ranker
+    elif user_input == 4 :  # Crypto Ranker
         clear_text_terminal()
         coincap_ranker()
         input("Press [Enter] to return to Menu")
-        execute_coincap_ranker = True
     elif user_input == 5:  # Future Value Predictor
         clear_text_terminal()
         future_value()
-        execute_future_value = False
         input("Press [Enter] to return to Menu")
-        execute_future_value = True
     elif user_input == 0:
         clear_text_terminal()
         print("Exiting the program...")
