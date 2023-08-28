@@ -231,8 +231,6 @@ def coincap_ranker():
     elif choice == "2":
         sort = "volume_24h"
     elif choice == "3":
-        sort = "percent_change_24h"
-    elif choice == "4":
         sort = "percent_change_7d"
     else:
         print("Invalid choice. Please select a valid option.")
