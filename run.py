@@ -144,7 +144,7 @@ def coincap_quotes():
 
     symbol = input(
         "Enter the ticker symbol of the cryptocurrency" +
-        "(BTC , XRP , ETH) : "
+        "(CAP SENSITIVE I.E BTC , XRP , ETH) : "
     ).upper()
 
     GLOBAL_URL = (
@@ -225,7 +225,7 @@ def coincap_ranker():
 
     choice = input(
         "What information would you like to view? (1-3 or 0 to exit) :  ")
-
+        
     if choice == "1":
         sort = "market_cap"
     elif choice == "2":
@@ -301,6 +301,7 @@ def coincap_ranker():
                     percent_change_7d = Back.RED + str(
                         percent_change_7d) + "%" + Style.RESET_ALL
 
+            
 
             if volume is not None:
                 volume_string = "{:,}".format(round(volume, 2))
@@ -315,8 +316,7 @@ def coincap_ranker():
                            local_symbol + price_string,
                            str(percent_change_1hr),
                            str(percent_change_24hr),
-                           str(percent_change_7d),
-                           str(percent_change_30d)])
+                           str(percent_change_7d)])
 
         print()
         print(table)
