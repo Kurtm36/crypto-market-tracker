@@ -144,7 +144,7 @@ def coincap_quotes():
 
     symbol = input(
         "Enter the ticker symbol of the cryptocurrency" +
-        "(CAP SENSITIVE I.E BTC , XRP , ETH) : "
+        "(BTC , XRP , ETH) : "
     ).upper()
 
     GLOBAL_URL = (
