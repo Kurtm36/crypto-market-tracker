@@ -116,14 +116,13 @@ Heroku link : https://kurts-crypto-market-tracker-830e785815c2.herokuapp.com/
 - I tested the App on command prompt aswell as other terminals 
 
 ### Bugs
-- In coincap_ranker_func.py Price is matching market_cap (solved. If statements LN.97 & LN.100 had swaped varibles 
-i.e market_cap in volume and volume in market_cap)
+- In the file coincap_ranker_func.py, I resolved the issue where the price was matching the market cap incorrectly. This problem was addressed by correcting the variable assignments at lines 97 and 100, where the variables market_cap and volume had been inadvertently swapped.
 
-- In coincap_listing/quotes_func.py percent changes were appearing as EURO and not percent (solved. Corrected formatting on string_percent etc)
+- In the coincap_listing/quotes_func.py, I identified and fixed a formatting issue where percent changes were being displayed as EURO instead of percentages. The correction involved revising the formatting of the string_percent variable and related components.
 
-- In future_value_func.py - I had to use encoding = 'utf-8-sig' to solve a issue with api not iterateing through the data
-
-- In future_value_func.py - I was using a "total_supply" instead of "circulating supply" for avaible_supply 
+- In future_value_func.py, I mitigated an issue with data iteration in the API by setting the encoding to 'utf-8-sig'. This change allowed the API to iterate through the data as intended.
+  
+- In the same future_value_func.py file, I rectified an error where "total_supply" was mistakingly used instead of "circulating supply" for the available_supply variable
 
 ### Credits 
 - This video helped me get set up with CoinmarketCap API [Beginner's Guide to the CoinMarketCap API](https://www.youtube.com/watch?v=f3GfkvfpVAE)
